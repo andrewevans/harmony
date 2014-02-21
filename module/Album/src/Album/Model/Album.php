@@ -11,6 +11,7 @@ class Album implements InputFilterAwareInterface
     public $id;
     public $artist;
     public $title;
+    public $year;
     protected $inputFilter;                       // <-- Add this variable
 
     public function exchangeArray($data)
@@ -18,6 +19,7 @@ class Album implements InputFilterAwareInterface
         $this->id     = (isset($data['id']))     ? $data['id']     : null;
         $this->artist = (isset($data['artist'])) ? $data['artist'] : null;
         $this->title  = (isset($data['title']))  ? $data['title']  : null;
+        $this->year  = (isset($data['year']))  ? $data['year']  : null;
     }
 
     public function getArrayCopy()
@@ -80,6 +82,14 @@ class Album implements InputFilterAwareInterface
                             'max'      => 100,
                         ),
                     ),
+                ),
+            )));
+
+            $inputFilter->add($factory->createInput(array(
+                'name'     => 'year',
+                'required' => true,
+                'filters'  => array(
+                    array('name' => 'Int'),
                 ),
             )));
 

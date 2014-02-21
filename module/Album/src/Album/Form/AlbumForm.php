@@ -35,6 +35,15 @@ class AlbumForm extends Form
             ),
         ));
         $this->add(array(
+            'name' => 'year',
+            'attributes' => array(
+                'type'  => 'text',
+            ),
+            'options' => array(
+                'label' => 'Year Released',
+            ),
+        ));
+        $this->add(array(
             'name' => 'submit',
             'attributes' => array(
                 'type'  => 'submit',
