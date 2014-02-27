@@ -91,6 +91,16 @@ class Album implements InputFilterAwareInterface
                 'filters'  => array(
                     array('name' => 'Int'),
                 ),
+                'validators' => array(
+                    array(
+                        'name'    => 'Between',
+                        'options' => array(
+                            'inclusive'      => false,
+                            'min'      => 1,
+                            'max'      => 2015,
+                        ),
+                    ),
+                ),
             )));
 
             $this->inputFilter = $inputFilter;
