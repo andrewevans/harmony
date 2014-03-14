@@ -93,7 +93,7 @@ class Album implements InputFilterAwareInterface
                 ),
                 'validators' => array(
                     array(
-                        'name'    => 'Between',
+                        'name'    => 'Between', // allows only values between 1 and 2015
                         'options' => array(
                             'inclusive'      => false,
                             'min'      => 1,
